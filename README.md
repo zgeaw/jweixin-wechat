@@ -10,6 +10,42 @@
 
 [微信官方文档](http://mp.weixin.qq.com/wiki/7/aaa137b55fb2e0456bf8dd9148dd613f.html)
 
-##安装方式
+## 安装方式
 
-npm install jweixin-wechat --save
+- 使用`npm`下载：`npm install jweixin-wechat --save`
+
+## 使用
+
+```javascript
+let WX = require('jweixin-wechat')
+WX.config({
+	debug: false, //开启debug模式，在验证签名过程中会返回对应信息
+	appId: appId,
+	timestamp: timestamp,
+	nonceStr: noncestr,
+	signature: signature,
+	jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
+});
+
+WX.ready(function () {
+	let data = {
+		title: titleShare,
+		desc: descShare,
+		link: linkurl,
+		imgUrl: imgShare,
+		success: function (res) {
+		   // 分享成功后回调
+		},
+		cancel: function (res) {
+		   //分享取消后回调
+		},
+		fail: function (res) {
+		   //分享失败后回调
+		}
+	};
+	WX.onMenuShareTimeline(data);//分享到朋友圈
+	WX.onMenuShareAppMessage(data);//分享给朋友
+	WX.onMenuShareQZone(data);//分享到QQ空间
+	WX.onMenuShareQQ(data);//分享给QQ好友
+});
+```
