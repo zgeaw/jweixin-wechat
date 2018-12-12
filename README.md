@@ -19,8 +19,6 @@ let WX = require('jweixin-wechat')
 WX.config({
 	debug: false, //开启debug模式，在验证签名过程中会返回对应信息
 	appId: appId,
-	timestamp: timestamp,
-	nonceStr: noncestr,
 	signature: signature,
 	jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo', 'onMenuShareQZone']
 });
