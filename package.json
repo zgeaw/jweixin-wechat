@@ -1,8 +1,8 @@
 {
   "name": "jweixin-wechat",
-  "version": "1.4.0",
+  "version": "1.6.0",
   "description": "wechat js-sdk 微信JSSDK",
-  "main": "jweixin-1.4.0.js",
+  "main": "jweixin-1.6.0.js",
   "scripts": {
     "test": "false"
   },
